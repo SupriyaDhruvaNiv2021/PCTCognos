@@ -7,8 +7,8 @@
         cd /home/esipct24/bin
         sh pctcog.sh
         cd /home/esipct24/data
-	      expect << 'EOS'
-	      spawn sftp esiadmin@us.ibm.com@9.209.252.223
-	      expect "Password:"
-	      send "ESI123Applications\n"
-	      EOS
+        expect << 'EOS'
+        spawn sftp esiadmin@us.ibm.com@9.209.252.223
+        expect "Password:"
+        send "ESI123Applications\n"
+        EOS
