@@ -1,7 +1,14 @@
 ---
 - hosts: all
-  gather_facts: yes
+  gather_facts: no
   tasks:
-    - name: PCT Cognos process
+    - name: Stop SAP application
       shell: |
-        echo hello, this is world
+        cd /home/esipct24/bin
+        sh pctcog.sh
+        cd /home/esipct24/data
+	expect << 'EOS'
+	spawn sftp esiadmin@us.ibm.com@9.209.252.223
+	expect "Password:"
+	send "PASSWORD\n"
+	EOS
