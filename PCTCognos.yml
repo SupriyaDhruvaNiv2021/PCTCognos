@@ -2,7 +2,7 @@
 - hosts: all
   gather_facts: no
   tasks:
-    - name: Stop SAP application
+    - name: generate the output
       shell: |
         cd /home/esipct24/bin
         sh pctcog.sh
@@ -11,4 +11,19 @@
         spawn sftp esiadmin@us.ibm.com@9.209.252.223
         expect "Password:"
         send "ESI123Applications\n"
+        cd  /ISData/Data/DEV/DMMPROC/ESI_PCT/ftp/esipct
+        put pct.tar.bz2
+        exit
         EOS
+      delegate_to: g01cirdb031.ahe.pok.ibm.com
+      register: Output1
+​
+    - name: Check the output
+      shell: |
+        cd  /ISData/Data/DEV/DMMPROC/ESI_PCT/ftp/esipct
+        chmod -f 777 pct.tar.bz2
+        ls -ltr
+      delegate_to: dgawdcdeng301.sl.bluecloud.ibm.com
+      register: Output2
+​
+Colla
