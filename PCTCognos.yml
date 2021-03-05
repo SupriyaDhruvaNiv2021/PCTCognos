@@ -18,8 +18,6 @@
       delegate_to: g01cirdb031.ahe.pok.ibm.com
       register: Output1
       
-      
-​
     - name: Fetch the file from the g01cirdb031.ahe.pok.ibm.com to master
       run_once: yes
       fetch: 
@@ -27,13 +25,13 @@
         dest: buffer/ 
         flat: yes
       when: "{{ inventory_hostname == 'g01cirdb031.ahe.pok.ibm.com' }}"
-​
+
     - name: Copy the file from master to dgawdcdeng301.sl.bluecloud.ibm.com
       copy: 
         src: buffer/pct.tar.bz2 
         dest: /ISData/Data/DEV/DMMPROC/ESI_PCT/ftp/esipct
       when: "{{ inventory_hostname == 'dgawdcdeng301.sl.bluecloud.ibm.com' }}"
-​
+      
     - name: Check the output
       shell: |
         cd  /ISData/Data/DEV/DMMPROC/ESI_PCT/ftp/esipct
