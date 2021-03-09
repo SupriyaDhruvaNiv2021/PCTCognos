@@ -5,6 +5,6 @@
     - name: copy from one system to another
       synchronize: 
         src: /home/esipct24/data/pct.tar.bz2
-        dst: /ISData/Data/DEV/DMMPROC/ESI_PCT/ftp/esipct/pct.tar.bz2
+        dest: /ISData/Data/DEV/DMMPROC/ESI_PCT/ftp/esipct/pct.tar.bz2
       delegate_to: g01cirdb031.ahe.pok.ibm.com
         
