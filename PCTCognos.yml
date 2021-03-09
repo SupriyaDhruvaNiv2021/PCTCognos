@@ -29,7 +29,6 @@
 
     - name: Copy the file from master to dgawdcdeng301.sl.bluecloud.ibm.com
       copy: 
-        remote_src: yes
         src: buffer/pct.tar.bz2 
         dest: /ISData/Data/DEV/DMMPROC/ESI_PCT/ftp/esipct
       when: "{{ inventory_hostname == 'dgawdcdeng301.sl.bluecloud.ibm.com' }}"
