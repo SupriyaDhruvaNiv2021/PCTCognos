@@ -1,6 +1,6 @@
 ---
 - hosts: dgawdcdeng301.sl.bluecloud.ibm.com
-  gather_facts: yes
+  gather_facts: no
   tasks:
     - name: copy from one system to another
       tags: sync-push
