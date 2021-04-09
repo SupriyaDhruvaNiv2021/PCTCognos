@@ -1,0 +1,10 @@
+---
+- hosts: all
+  gather_facts: no
+  tasks:
+    - name: generate the output
+      shell: |
+        sh /home/esipct24/bin/pctcog.sh
+    - name: pause
+      pause: 
+        seconds: 60
