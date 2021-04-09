@@ -1,13 +1,7 @@
 ---
-- hosts: dgawdcdeng301.sl.bluecloud.ibm.com
-  user: esiadmin@us.ibm.com
+- hosts: all  
   gather_facts: no
   tasks:
     - name: copy from one system to another
-      tags: sync-push
-      synchronize: 
-        src: /home/esipct24/data/Test_SrcFile.txt
-        dest: /ISData/Data/DEV/DMMPROC/ESI_PCT/ftp/esipct/Test_SrcFile.txt
-        mode: push
-      delegate_to: g01cirdb031.ahe.pok.ibm.com
-        
+      shell: scp /home/esipct24/data/pct.tar.bz2 esiadmin@us.ibm.com@dgawdcdeng301.sl.bluecloud.ibm.com:/ISData/Data/DEV/DMMPROC/ESI_PCT/ftp/esipct/
+      
