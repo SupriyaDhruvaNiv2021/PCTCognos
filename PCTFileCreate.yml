@@ -7,4 +7,4 @@
         sh /home/esipct24/bin/pctcog.sh
     - name: pause
       pause: 
-        seconds: 60
+        seconds: 10
