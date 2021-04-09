@@ -6,7 +6,7 @@
       tags: sync-push
       synchronize: 
         src: /home/esipct24/data/Test_SrcFile.txt
-        dest: /ISData/Data/DEV/DMMPROC/ESI_PCT/ftp/esipct/
+        dest: /ISData/Data/DEV/DMMPROC/ESI_PCT/ftp/esipct/Test_SrcFile.txt
         mode: push
       delegate_to: g01cirdb031.ahe.pok.ibm.com
         
