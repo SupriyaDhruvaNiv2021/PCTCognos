@@ -7,10 +7,6 @@
     - name: Pause
       pause:
         seconds: 5  
-    - name: File Permissions
-      file:
-        path: /ISData/Data/DEV/DMMPROC/ESI_PCT/ftp/esipct/pct.tar.bz2        
-        mode: '0777'
-      delegate_to: dgawdcdeng301.sl.bluecloud.ibm.com
+
       
       
